@@ -11,7 +11,7 @@ tags:
 published: true
 ---
 
-[上一篇文章](/2016/08/06/2016-08-06-yong-you-ni-de-ge-ren-bo-ke/)讲了如何用 Octopress 在 GitHub 上搭建个人主页，今天这篇写给可爱的科研狗们，介绍怎么样让网页兼容 LaTeX！首先看看效果：
+[上一篇文章](/2016/08/06/yong-you-ni-de-ge-ren-bo-ke/)讲了如何用 Octopress 在 GitHub 上搭建个人主页，今天这篇写给可爱的科研狗们，介绍怎么样让网页兼容 LaTeX！首先看看效果：
 
 - LaTeX 行间模式（displayed math）
 
@@ -23,7 +23,7 @@ $$
 \end{align}
 $$
 ```
-	
+
 $$
 \begin{align}
 \mbox{欧拉公式：} & e^{i\pi} + 1 = 0\\
@@ -38,7 +38,7 @@ $$
 ```latex latex
 爱因斯坦说过：$E = mc^2$
 ```
-	
+
 爱因斯坦说过：$E = mc^2$
 
 #### 让 Markdown 显示数学公式：kramdown 和 MathJax
@@ -154,13 +154,13 @@ raise "Pygments can't parse unknown language: #{lang}#{code}."
 
 **2017/1/12 update:** 更新到 python 3 之后，pygments 又出错了，不能 parse language。原因就是因为 pygments 只支持 python 2。**解决方法：** 用 anaconda 建立一个 python 2 的 environment:
 
-``` bash 
+``` bash
 conda create -n py27 python=2.7 anaconda
 ```
 
 安装好 python 2.7 后，激活这个 environment:
 
-``` bash 
+``` bash
 source activate py27
 ```
 

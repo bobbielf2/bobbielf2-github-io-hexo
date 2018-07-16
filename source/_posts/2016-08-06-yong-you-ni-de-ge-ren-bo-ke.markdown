@@ -45,13 +45,16 @@ Octopress 是一个基于 **Jekyll** 的*静态博客架构*（static blogging f
 
 Jekyll 是一个对写作者友好的*网页模版系统*（web template system），能够处理文本文档生成*静态网站*（static site, 访问速度远远快于动态网站，因为动态网站是每次访问都重新生成的）。按它开发者的话来说，Jekyll 具有 “blog-aware（博客意识）” 的特点，意思是说它是为博客而生的，写作者用它来发布文章时，只需要处理好文字，而不用费神去处理数据库和网页内容管理之类的技术问题。当然，“好用”是基于不同人的体验的，对于我这种技术小白来说，学会 Jekyll 还是有点麻烦的，所以才要用 Octopress 这个现成模版。
 
-> Remark: Jekyll 是用 [Ruby 编程语言](<https://en.wikipedia.org/wiki/Ruby_(programming_language)>)写出来的软件。
-> <br />
-> 所有用 Ruby 写出来的软件都是用 [RubyGems](https://en.wikipedia.org/wiki/RubyGems) 这个*软件包管理系统*（package manager）分发安装的。在 RubyGems 中，一个封装好的软件叫 Gem。RubyGems 的命令一般是用 `gem` 开头的。当需要安装不止一个软件甚至一些第三方软件包的时候，可以用 Bundler（另一个 Ruby 软件）来批量处理，命令以 `bundle` 开头，被执行的命令写在一个 Gemfile 里面。
-> <br />
-> Ruby 和其他编程语言一样可以执行脚本，叫做 Rakefile（类似 C 语言里面的 Makefile），方便编译运行 Ruby 程序。Rakefile 用 `rake` 执行（类似 Makefile 用 `make` 执行）。
-> <br />
-> 综上所述，等下安装 Jekyll 和 Octopress 时首先要安装 Ruby， RubyGems 和 Bundler。
+{% blockquote %}
+
+Remark: Jekyll 是用{% link Ruby 编程语言 https://en.wikipedia.org/wiki/Ruby_(programming_language) %}写出来的软件。
+
+所有用 Ruby 写出来的软件都是用 [RubyGems](https://en.wikipedia.org/wiki/RubyGems) 这个*软件包管理系统*（package manager）分发安装的。在 RubyGems 中，一个封装好的软件叫 Gem。RubyGems 的命令一般是用 `gem` 开头的。当需要安装不止一个软件甚至一些第三方软件包的时候，可以用 Bundler（另一个 Ruby 软件）来批量处理，命令以 `bundle` 开头，被执行的命令写在一个 Gemfile 里面。
+
+Ruby 和其他编程语言一样可以执行脚本，叫做 Rakefile（类似 C 语言里面的 Makefile），方便编译运行 Ruby 程序。Rakefile 用 `rake` 执行（类似 Makefile 用 `make` 执行）。
+
+综上所述，等下安装 Jekyll 和 Octopress 时首先要安装 Ruby， RubyGems 和 Bundler。
+{% endblockquote %}
 
 ### 二、 安装博客的流程
 
@@ -76,7 +79,7 @@ brew install rbenv
 rbenv init
 ```
 
-系统会返回指令，教你怎么配置 rbenv。具体来说就是打开 `~/.bash_profile` 文件，在里面加入一行 
+系统会返回指令，教你怎么配置 rbenv。具体来说就是打开 `~/.bash_profile` 文件，在里面加入一行
 
 ```bash
 eval "$(rbenv init -)"
@@ -110,7 +113,7 @@ bundle install
 rake install
 ```
 
-	
+
 #### 3. 关联 GitHub， 部署博客
 
 
@@ -141,7 +144,7 @@ rake deploy
 ```
 
 当然不要忘记备份博客，把文件同步 push 到 GitHub 上
-	
+
 ```bash
 git add .
 git commit -m 'create blog'
@@ -149,11 +152,11 @@ git push origin source
 ```
 
 现在可以去你的 GitHub 网址看自己的网页了，比如我的就是 [https://bobbielf2.github.io/](https://bobbielf2.github.io/)。
-	
+
 #### 4. 配置博客
 
 接着可以修改网页配置，位置在 `octopress/_config.yml`。
-	
+
 ```yaml
 url:                # For rewriting urls for RSS, etc
 title:              # Used in the header and title tags
@@ -175,11 +178,11 @@ rake generate
 rake deploy
 # 别忘了用 git 备份
 git add .
-git commit -m "settings" 
+git commit -m "settings"
 git push origin source
 ```
 
-> Remark: 每次 commit 来确认改变之前，都要 add 来更新索引。最终 push 来把 source 里的文件都备份到 GitHub 上。所以 commit 之前可以 add 很多次，push 之前也可以 commit 很多次。 
+> Remark: 每次 commit 来确认改变之前，都要 add 来更新索引。最终 push 来把 source 里的文件都备份到 GitHub 上。所以 commit 之前可以 add 很多次，push 之前也可以 commit 很多次。
 
 
 ### 三、 写博客
@@ -192,17 +195,17 @@ git push origin source
 
 #### 1. 创建新的文章
 
-用这个命令生成新的 blog article 
-  
+用这个命令生成新的 blog article
+
 ```bash
 rake new_post['title']
-``` 
-  
+```
+
 生成的 Markdown 文件在 `octopress/source/_posts` 目录下
 
 #### 2. 编辑和发布文章
 
-用 Markdown 语言写好文章，保存后可以预览： 运行 `rake preview `，然后在浏览器访问 <http://localhost:4000/> 
+用 Markdown 语言写好文章，保存后可以预览： 运行 `rake preview `，然后在浏览器访问 <http://localhost:4000/>
 
 然后发布：
 
@@ -217,12 +220,12 @@ rake deploy
 ### 四、 使用不同的主题。
 
 网上有很多人制作不同的网页主题（theme）。举例安装第三方主题：
-	
+
 ```bash
 #这里以安装allenhsu定制的greyshade主题为例，原作者是shashankmehta
 git clone git@github.com:allenhsu/greyshade.git .themes/greyshade
 #Substitue 'color' with your highlight color
-echo "\$greyshade: color;" >> sass/custom/_colors.scss 
+echo "\$greyshade: color;" >> sass/custom/_colors.scss
 rake "install[greyshade]"
 ```
 
@@ -231,11 +234,11 @@ rake "install[greyshade]"
 ```bash
 rake generate
 git add .
-git commit -m "theme" 
+git commit -m "theme"
 git push origin source
 rake deploy
 ```
- 
+
 安装完 greyshade，你会发现左方导航栏上的 About me 是指向原作者的主页的，可以这样改回来：在 `/source/_includes/custom/navigation.html` 中记录了导航栏的内容
 
 ```html
