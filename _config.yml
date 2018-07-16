@@ -72,14 +72,14 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
-# kramed:
-#   gfm: true
-#   pedantic: false
-#   sanitize: false
-#   tables: true
-#   breaks: true
-#   smartLists: true
-#   smartypants: true
+kramed:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true
 ## Themes: https://hexo.io/themes/
 theme: landscape
 
